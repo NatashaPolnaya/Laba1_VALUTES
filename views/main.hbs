@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <div>
     <form>
         <div>
@@ -23,10 +24,10 @@
 </div>
 
 <div>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>#</th>
+                <th>№</th>
                 <th>Название</th>
                 <th>Обозначение</th>
                 <th>Курс к рублю</th>
@@ -36,7 +37,7 @@
         <tbody>
             {{#each Valute}}
                 <tr>
-                    <td>#</td>
+                    <td></td>
                     <td>{{Name}}</td>
                     <td>{{CharCode}}</td>
                     <td>{{Value}}</td>
@@ -45,4 +46,10 @@
             {{/each}}
         </tbody>
     </table>
+    <script>
+        $('.table tbody tr').each(function(i) {
+            var number = i + 1;
+            $(this).find('td:first').text(number+".");
+        });
+</script>
 </div>
