@@ -3,21 +3,21 @@
     <form>
         <div>
             <div>
-                <select id="left-valute">
+                <select id="left-valute" onchange="Convert(this)">
                     {{#each Valute}}
                     <option value="{{Value}}">{{Name}}</option>
                     {{/each}}
                 </select>
-                <input id="left-text" value="0" placeholder="100">
+                <input id="left-text" value="0" placeholder="100" oninput="Convert(this)">
             </div>
 
             <div>
-                <select id="right-valute">
+                <select id="right-valute" onchange="Convert(this)">
                     {{#each Valute}}
                         <option value="{{Value}}">{{Name}}</option>
                     {{/each}}
                 </select>
-                <input id="right-text" value="0" placeholder="100">
+                <input id="right-text" value="0" placeholder="100" oninput="Convert(this)">
             </div>
         </div>
     </form>
@@ -53,3 +53,19 @@
         });
 </script>
 </div>
+
+<script>
+    function Convert(val) {
+        const lValute = document.getElementById("left-valute");
+        const rValute = document.getElementById("right-valute");
+        const lText = document.getElementById("left-text");
+        const rText = document.getElementById("right-text");
+
+        if (val == lValute || val == lText) {
+            rText.value = lText.value * lValute.value / rValute.value;
+        }
+        else {
+            lText.value = rText.value * rValute.value / lValute.value;
+        }
+    }
+</script>
