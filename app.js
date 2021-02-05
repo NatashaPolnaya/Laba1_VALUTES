@@ -31,9 +31,8 @@ app.get("/", (request, response) => {
 
             for (const key in model.Valute) {
                 const element = model.Valute[key];
-
-                element.Value = element.Value / element.Nominal;
-                element.DeValue = 1 / element.Value;
+                element.Value = (element.Value / element.Nominal).toFixed(3);
+                element.DeValue = (1 / element.Value).toFixed(3);
             }
         }
 
