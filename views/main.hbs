@@ -1,0 +1,46 @@
+<div>
+    <form>
+        <div>
+            <div>
+                <select id="left-valute">
+                    {{#each Valute}}
+                    <option value="{{Value}}">{{Name}}</option>
+                    {{/each}}
+                </select>
+                <input id="left-text">
+            </div>
+
+            <div>
+                <select id="right-valute">
+                    {{#each Valute}}
+                        <option value="{{Value}}">{{Name}}</option>
+                    {{/each}}
+                </select>
+                <input id="right-text">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <tr>#</tr>
+            <tr>Название</tr>
+            <tr>Обозначение</tr>
+            <tr>Курс к рублю</tr>
+            <tr>Рубль к валюте</tr>
+        </thead>
+        <tbody>
+            {{#each Valute}}
+                <tr>
+                    <td>#</td>
+                    <td>{{Name}}</td>
+                    <td>{{CharCode}}</td>
+                    <td>{{Value}}</td>
+                    <td>{{DeValue}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
