@@ -63,10 +63,10 @@
         const rText = document.getElementById("right-text");
 
         if (val == lValute || val == lText) {
-            rText.value = lText.value * lValute.value / rValute.value;
+            rText.value = (lText.value * lValute.value / rValute.value).toFixed(3);
         }
         else {
-            lText.value = rText.value * rValute.value / lValute.value;
+            lText.value = (rText.value * rValute.value / lValute.value).toFixed(3);
         }
     }
 </script>

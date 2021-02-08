@@ -1,12 +1,25 @@
 {
   "name": "valutes",
   "version": "1.0.0",
-  "description": "",
   "author": "natashapolnaya",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "request": "^2.88.2"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NatashaPolnaya/Laba2_VALUTES.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NatashaPolnaya/Laba2_VALUTES/issues"
+  },
+  "homepage": "https://github.com/NatashaPolnaya/Laba2_VALUTES#readme",
+  "description": ""
 }
