@@ -28,7 +28,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>№</th>
+                <th scope="row">№</th>
                 <th>Название</th>
                 <th>Обозначение</th>
                 <th>Курс к рублю</th>
@@ -38,7 +38,7 @@
         <tbody>
             {{#each Valute}}
                 <tr>
-                    <td></td>
+                    <td>{{Nom}}</td>
                     <td>{{Name}}</td>
                     <td>{{CharCode}}</td>
                     <td>{{Value}}</td>
@@ -47,12 +47,6 @@
             {{/each}}
         </tbody>
     </table>
-    <script>
-        $('.table tbody tr').each(function(i) {
-            var number = i + 1;
-            $(this).find('td:first').text(number+".");
-        });
-</script>
 </div>
 
 <script>

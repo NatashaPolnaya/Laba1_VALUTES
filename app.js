@@ -28,11 +28,16 @@ app.get("/", (request, response) => {
                 Value: 1,
                 Previous: 1
             };
-
+            
+            var number = 0;
             for (const key in model.Valute) {
                 const element = model.Valute[key];
                 element.Value = (element.Value / element.Nominal).toFixed(3);
                 element.DeValue = (1 / element.Value).toFixed(3);
+
+                number += 1;
+                element.Nom = number;
+
             }
         }
 
