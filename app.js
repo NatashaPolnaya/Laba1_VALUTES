@@ -14,12 +14,18 @@ app.get("/", (request, response) => {
         let model = {
             Valute: {}
         };
+        let help_model = {
+            Valute: {}
+        }
+        let rus_model = {
+            Valute: {}
+        }
         
         if (error) console.log(error);
         else {
-            model = JSON.parse(data);
+            //model = JSON.parse(data);
 
-            model.Valute["RUS"] = {
+            rus_model.Valute["RUS"] = {
                 ID: "R0",
                 NumCode: "0",
                 CharCode: "RUS",
@@ -28,7 +34,10 @@ app.get("/", (request, response) => {
                 Value: 1,
                 Previous: 1
             };
-            
+
+            help_model = JSON.parse(data);
+            model.Valute = Object.assign(rus_model.Valute, help_model.Valute);
+
             var number = 0;
             for (const key in model.Valute) {
                 const element = model.Valute[key];
